@@ -2,7 +2,7 @@ import {
   CHANGE_OPTIONS
 } from '../types'
 
-const state = {item: {currentPage: 1, itemsPerPage: 10,sortName:'publish_time',tagId: ''}}
+const state = {item: {empid: 35, month:'2017-12'}}
 
 const actions = {
   changeOptions({ commit },options){

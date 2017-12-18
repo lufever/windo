@@ -1,4 +1,4 @@
-import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource} from './resources'
+import {UserResource,AuthResource,ArticleResource,DayReportResource,TagResource,MobileResource,CommentResource} from './resources'
 
 export default {
   localLogin: function (data) {
@@ -26,11 +26,14 @@ export default {
   getFrontArticleList:function (options) {
     return ArticleResource.get({id: 'getFrontArticleList', ...options})
   },
+  Geteh_dayly_reportsByMonth:function (options) {
+    return DayReportResource.get({id: 'Geteh_dayly_reportsByMonth', ...options})
+  },
   getFrontArticleCount:function () {
     return ArticleResource.get({id: 'getFrontArticleCount'})
   },
-  getFrontArticle:function (id) {
-    return ArticleResource.get({id: id, controller: 'getFrontArticle'})
+  Geteh_dayly_reports:function (id) {
+    return DayReportResource.get({id: id, controller: 'Geteh_dayly_reports'})
   },
   toggleLike:function (id) {
     return ArticleResource.update({id:id,controller:'toggleLike'},{})

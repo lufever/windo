@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
 import apps from './modules/apps'
-import articleList from './modules/article.list'
+import dayReport from './modules/dayreport'
 import prenextArticle from './modules/article.prenext'
-import articleDetail from './modules/article.detail'
+// import dayReportDetail from './modules/dayreport.detail'
 import auth from './modules/auth'
 import commentList from './modules/comment.list'
 import globalVal from './modules/global.val'
@@ -24,9 +24,8 @@ export default new Vuex.Store({
   getters,
   modules: {
     apps,
-    articleList,
+    dayReport,
     prenextArticle,
-    articleDetail,
     auth,
     commentList,
     globalVal,

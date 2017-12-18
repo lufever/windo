@@ -5,7 +5,7 @@
         <!-- <Sidebar :index-img="indexImg"></Sidebar> -->
         <div class="col-sm-7 col-sm-offset-3 main-content">
           <!-- <Tags :tag-list="tagList" :options="options" :is-fetching="isFetching"></Tags> -->
-          <Articles :article-list="articleList"></Articles>
+          <DayReportList :dayreport-list="dayReportList"></DayReportList>
           <!-- <Loadmore v-if="articleList.length > 0 && isMore" :options="options" :is-more="isMore" :is-fetching="isFetching"></Loadmore> -->
         </div>
       </div>
@@ -16,22 +16,23 @@
 <script>
 // import Sidebar from './sidebar.vue'
 // import Tags from './tags.vue'
-import Articles from './articles.vue'
+import DayReportList from './dayreportlist.vue'
 //import Loadmore from './loadmore.vue'
 // import Footerbar from './footer.vue'
 import { mapState,mapActions } from 'vuex'
 
 export default {
  // components:{ Sidebar,Footerbar,Tags,Articles,Loadmore },
- components:{ Articles },
+ components:{ DayReportList },
   computed: {
     ...mapState({
+     
      // indexImg: ({globalVal}) => globalVal.indexImg,
      // tagList: ({tagList}) => tagList.items,
       options: ({options}) => options.item,
-      articleList: ({articleList}) => articleList.items,
+      dayReportList: ({dayReport}) => dayReport.dayReportList.DayReportList,
      // isMore: ({articleList}) => articleList.isMore,
-      isFetching: ({articleList}) => articleList.isFetching      
+      isFetching: ({dayReport}) => dayReport.isFetching      
     })
   },  
   created(){
@@ -41,8 +42,8 @@ export default {
     // if(this.tagList.length < 1){
     //   this.getTagList()
     // }
-    if(this.articleList.length < 1){
-      this.getArticleList({options:this.options})
+    if(this.dayReportList.length < 1){
+      this.getDayReportList({options:this.options})
     }
   },
   methods:{
@@ -50,12 +51,12 @@ export default {
       // 'getIndexImage',
       // 'getTagList',
       'changeOptions',
-      'getArticleList'
+      'getDayReportList'
     ]),    
-    handleChange(options,isAdd=false){
-      this.changeOptions(options)
-      this.getArticleList({options:this.options,isAdd:isAdd})
-    }
+    // handleChange(options,isAdd=false){
+    //   this.changeOptions(options)
+    //   this.getDayReportList({options:this.options,isAdd:isAdd})
+    // }
   }
 }
 </script>

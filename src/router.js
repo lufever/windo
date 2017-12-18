@@ -35,8 +35,9 @@ const router = new Router({
         requiresAuth: true
       }
     },
+ 
     {
-      path: '/article/:aid',
+      path: '/article/:aid?',
       name: 'article',
       component: Article,
       meta: {
