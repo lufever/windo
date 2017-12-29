@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
 import apps from './modules/apps'
 import dayReport from './modules/dayreport'
+import project from './modules/project'
+import employee from './modules/employee'
 import prenextArticle from './modules/article.prenext'
 // import dayReportDetail from './modules/dayreport.detail'
 import auth from './modules/auth'
@@ -25,6 +27,8 @@ export default new Vuex.Store({
   modules: {
     apps,
     dayReport,
+    project,
+    employee,
     prenextArticle,
     auth,
     commentList,

@@ -9,9 +9,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const env = process.env.NODE_ENV || 'development'
 const debug = env !== 'production'
 
+function resolve (dir) {  
+  return path.join(__dirname, '.', dir)
+}
+
 const config = {
   devtool: debug ? 'cheap-module-source-map' : 'hidden-source-map',
-   entry:'./src/index.js',
+   entry:'./src/main.js',
    //{
   //   venders: ['vue','vuex','vue-router'],
   //   mainbundle: './src/index',
@@ -124,6 +128,7 @@ const config = {
   resolve: {
     extensions: ['.js','.vue','.scss','.css'],
     alias: {
+      '@': resolve('src'),
       components: path.resolve(__dirname, 'src/components'),
       actions: path.resolve(__dirname, 'src/store/actions'),
       getters: path.resolve(__dirname, 'src/store/getters'),
